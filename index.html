@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>To-Do</title>
+  </head>
+  <body>
+    <h1 class="title_page">To-do list</h1>
+    <div class="container">
+      <div class="place_for_input">
+        <form class="form" action="">
+          <input class="input_add" type="text" placeholder="add new to-do" />
+          <div class="dropdown">
+            <button class="btn_add">Add</button>
+            <div class="dropdown-content">
+              <a href="active_add">Active</a>
+              <a href="completed_add">Completed</a>
+              <a href="set_add">Set aside</a>
+            </div>
+          </div>
+          <button class="btn_clear">Clear</button>
+        </form>
+      </div>
+
+      <div class="place_todo">
+        <button class="accordion">Active</button>
+        <div class="panel_active">
+          <ul>
+            <li>
+              <p>Nothing...</p>
+            </li>
+          </ul>
+        </div>
+
+        <button class="accordion">Completed</button>
+        <div class="panel_completed">
+          <ul>
+            <li>
+              <p>Nothing...</p>
+            </li>
+          </ul>
+        </div>
+
+        <button class="accordion">Set aside</button>
+        <div class="panel_set">
+          <ul>
+            <li>
+              <p>Nothing...</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./code.js"></script>
+    <script src="./input.js"></script>
+  </body>
+</html>

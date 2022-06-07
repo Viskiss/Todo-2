@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.title_page {
+  font-weight: 500;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: inherit;
+  margin: 40px 40px 20px 40px;
+}
+
+.place_for_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 160px;
+}
+
+.input_add {
+  height: 40px;
+  background-color: #ccc;
+  color: black;
+}
+
+.btn_add {
+  height: 40px;
+  background-color: #eee;
+  color: #444;
+
+  font-size: 16px;
+  border: none;
+}
+
+.btn_add:hover {
+  background-color: #ccc;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ccc;
+}
+
+.btn_clear {
+  height: 40px;
+  background-color: #eee;
+  color: #444;
+
+  font-size: 16px;
+  border: none;
+}
+
+.btn_clear:hover {
+  background-color: #ccc;
+}
+
+.place_todo {
+  width: 70%;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel_active {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.panel_completed {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.panel_set {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+
+  
