@@ -113,25 +113,47 @@ body {
   background-color: #ccc;
 }
 
-.panel_active {
+.panel {
   padding: 0 18px;
   background-color: white;
   display: none;
   overflow: hidden;
 }
 
-.panel_completed {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
+
+.in_li {
+    display: flex;
+    align-items: center;
+    justify-content:space-around ;
 }
 
-.panel_set {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
+.btn_delete {
+  height: 40px;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  margin: 10px;
+}
+
+.btn_delete:hover {
+  background-color: #ccc;
+}
+
+.btn_selector {
+  height: 40px;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  margin: 10px;
+}
+
+.btn_selector:hover {
+  background-color: #ccc;
+}
+
 
   

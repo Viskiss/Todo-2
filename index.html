@@ -20,9 +20,9 @@
           <div class="dropdown">
             <button class="btn_add">Add</button>
             <div class="dropdown-content">
-              <a href="active_add">Active</a>
-              <a href="completed_add">Completed</a>
-              <a href="set_add">Set aside</a>
+              <a class="active_add">Active</a>
+              <a class="completed_add">Completed</a>
+              <a class="set_add">Set aside</a>
             </div>
           </div>
           <button class="btn_clear">Clear</button>
@@ -31,29 +31,31 @@
 
       <div class="place_todo">
         <button class="accordion">Active</button>
-        <div class="panel_active">
-          <ul>
+        <div class="panel">
+            
+          <ul class="ul_active">
             <li>
-              <p>Nothing...</p>
+             <div class="in_li"> 
+                 Nothing...
+                 <button class="btn_in_li"></button>
+                 <button class="btn_in_li"></button>
+            </div> 
             </li>
           </ul>
+          
         </div>
 
         <button class="accordion">Completed</button>
-        <div class="panel_completed">
-          <ul>
-            <li>
-              <p>Nothing...</p>
-            </li>
+        <div class="panel">
+          <ul class="ul_completed">
+            
           </ul>
         </div>
 
         <button class="accordion">Set aside</button>
-        <div class="panel_set">
-          <ul>
-            <li>
-              <p>Nothing...</p>
-            </li>
+        <div class="panel">
+          <ul class="ul_set">
+            
           </ul>
         </div>
       </div>

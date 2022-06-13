@@ -14,6 +14,6 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-document.getElementById("btn_clear").onclick = function (e) {
+document.querySelector(".btn_clear").onclick = function () {
     document.querySelector(".input_add").value = "";
   };
