@@ -3,27 +3,25 @@ const INPUT_ADD = document.querySelector(".input_add");
 const DROPDOWN = document.querySelector(".dropdown-content");
 const UL_ACTIVE = document.querySelector(".ul_active");
 const UL_COMPLETED = document.querySelector(".ul_completed");
-const ACC = document.getElementsByClassName("accordion");
 const UL_SET = document.querySelector(".ul_set");
-const UL = document.querySelectorAll("ul");
-
+const ACC = document.getElementsByClassName(".accordion");
+// const BTN = document.querySelector("div")
+const LI = document.querySelectorAll("li");
 const PANEL_ACTIVE = document.querySelector(".panel_active");
 
 const LOCAL_STORAGE_TODO = "todos";
 // const LOCAL_STORAGE_COMPLETED_TODO = "completed_todo";
 // const LOCAL_STORAGE_SET_TODO = "set_todo";
 
-let active_todos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TODO)) || [];
+let TODOS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TODO)) || [];
+
+function save() {
+  localStorage.setItem(LOCAL_STORAGE_TODO, JSON.stringify(TODOS));
+}
 
 const COMPLETED_SELECTOR = "COMPLETED";
 const RESERVED_SELECTOR = "RESERVED";
 
-// let activeLists =
-//   JSON.parse(localStorage.getItem(LOCAL_STORAGE_ACTIVE_LISTS)) || [];
-// let inActiveLists =
-//   JSON.parse(localStorage.getItem(LOCAL_STORAGE_INACTIVE_LISTS)) || [];
-
-const TODOS = [];
 const ACTIVE_TODOS = TODOS.filter((todo) => {
   if (!todo.completed && !todo.reserved) {
     return true;
@@ -35,27 +33,41 @@ FORM.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
-// UL_ACTIVE.addEventListener("click", (event) => {
-//   const btnType = event.target.dataset.btn;
-//   const id = event.target.dataset.todoId;
+UL_ACTIVE.addEventListener("click", (event) => {
+  const btnType = event.target.dataset.btn;
+  const id = event.target.dataset.todoId;
+  if (btnType === "delete") {
+    newtodo = TODOS.filter((todo) => todo.id !== id);
+    TODOS = newtodo;
+    console.log(newtodo);
+    render();
+    save();
+  }
+});
 
-//   if (btnType === "delete"){
-//     TODOS = TODOS.filter((todo) => todo.id !== id)
+UL_COMPLETED.addEventListener("click", (event) => {
+  const btnType = event.target.dataset.btn;
+  const id = event.target.dataset.todoId;
+  if (btnType === "delete") {
+    newtodo = TODOS.filter((todo) => todo.id !== id);
+    TODOS = newtodo;
+    console.log(newtodo);
+    render();
+    save();
+  }
+});
 
-//   } else if (btnType === "completed"){
-
-//     const checkItem = TODOS.find((todo) => todo.id === id)
-//     TODOS = TODOS.filter((todo) => todo.id !== id)
-//     UL_COMPLETED.push(checkItem)
-
-//   } else if (btnType === "set"){
-
-//     const checkItem = TODOS.find((todo) => todo.id === id)
-//     TODOS = TODOS.filter((todo) => todo.id !== id)
-//     UL_SET.push(checkItem)
-//   }
-
-// })
+UL_SET.addEventListener("click", (event) => {
+  const btnType = event.target.dataset.btn;
+  const id = event.target.dataset.todoId;
+  if (btnType === "delete") {
+    newtodo = TODOS.filter((todo) => todo.id !== id);
+    TODOS = newtodo;
+    console.log(newtodo);
+    render();
+    save();
+  }
+});
 
 DROPDOWN.addEventListener("click", (event) => {
   const value = INPUT_ADD.value;
@@ -77,7 +89,8 @@ DROPDOWN.addEventListener("click", (event) => {
     }
 
     TODOS.push(todo);
-    console.log(ACTIVE_TODOS);
+    save();
+    // console.log(TODOS);
 
     INPUT_ADD.value = "";
     render();
@@ -87,7 +100,7 @@ DROPDOWN.addEventListener("click", (event) => {
 const createTodo = (value, selector = "") => {
   const todo = {
     value,
-    id: Date.now(),
+    id: Date.now().toString(),
     completed: false,
     reserved: false,
   };
