@@ -4,14 +4,10 @@ const DROPDOWN = document.querySelector(".dropdown-content");
 const UL_ACTIVE = document.querySelector(".ul_active");
 const UL_COMPLETED = document.querySelector(".ul_completed");
 const UL_SET = document.querySelector(".ul_set");
-const ACC = document.getElementsByClassName(".accordion");
-// const BTN = document.querySelector("div")
+
 const LI = document.querySelectorAll("li");
-const PANEL_ACTIVE = document.querySelector(".panel_active");
 
 const LOCAL_STORAGE_TODO = "todos";
-// const LOCAL_STORAGE_COMPLETED_TODO = "completed_todo";
-// const LOCAL_STORAGE_SET_TODO = "set_todo";
 
 let TODOS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TODO)) || [];
 
@@ -36,13 +32,20 @@ FORM.addEventListener("submit", (event) => {
 UL_ACTIVE.addEventListener("click", (event) => {
   const btnType = event.target.dataset.btn;
   const id = event.target.dataset.todoId;
-  if (btnType === "delete") {
+
+  if (btnType === "set") {
+    newtodo = TODOS.find((todo) => todo.id === id);
+    newtodo.reserved = true;
+  } else if (btnType === "completed") {
+    newtodo = TODOS.find((todo) => todo.id === id);
+    newtodo.completed = true;
+  } else if (btnType === "delete") {
     newtodo = TODOS.filter((todo) => todo.id !== id);
     TODOS = newtodo;
     console.log(newtodo);
-    render();
-    save();
   }
+  render();
+  save();
 });
 
 UL_COMPLETED.addEventListener("click", (event) => {
@@ -60,13 +63,21 @@ UL_COMPLETED.addEventListener("click", (event) => {
 UL_SET.addEventListener("click", (event) => {
   const btnType = event.target.dataset.btn;
   const id = event.target.dataset.todoId;
-  if (btnType === "delete") {
+  if (btnType === "active") {
+    newtodo = TODOS.find((todo) => todo.id === id);
+    newtodo.reserved = false;
+    newtodo.completed = false;
+  } else if (btnType === "completed") {
+    newtodo = TODOS.find((todo) => todo.id === id);
+    newtodo.completed = true;
+    newtodo.reserved = false;
+  } else if (btnType === "delete") {
     newtodo = TODOS.filter((todo) => todo.id !== id);
     TODOS = newtodo;
     console.log(newtodo);
-    render();
-    save();
   }
+  render();
+  save();
 });
 
 DROPDOWN.addEventListener("click", (event) => {
@@ -131,6 +142,7 @@ const render = () => {
     const btn_delete = document.createElement("button");
     btn_delete.dataset.btn = "delete";
     btn_delete.dataset.todoId = todo.id;
+    btn_delete.dataset.title = "no recovery";
     btn_delete.classList.add("btn_delete", "div_btn", "delete");
 
     const btn_active = document.createElement("button");

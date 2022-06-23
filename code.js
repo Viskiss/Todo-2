@@ -14,6 +14,15 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// const ul = document.querySelector('ul')
+// const li = document.querySelector('li')
+
+// if (ul.contains(li) ){
+//   panel.style.display = "block";
+// } else {
+//   panel.style.display = "none";
+// }
+
 document.querySelector(".btn_clear").onclick = function () {
-    document.querySelector(".input_add").value = "";
-  };
+  document.querySelector(".input_add").value = "";
+};
