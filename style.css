@@ -104,7 +104,8 @@ body {
 }
 
 .place_todo {
-  width: 70%;
+  width: 65%;
+  margin-left: 30px;
 }
 
 .accordion {
@@ -179,4 +180,111 @@ body {
   padding: 5px;
   margin-top: 15px;
   border: 1px solid rgb(0, 0, 0);
+}
+
+@media (max-width: 1240px) {
+  .place_for_input {
+    width: 30%;
+  }
+
+  .input_add {
+    width: 250px;
+  }
+
+  .btn_add {
+    width: 100px;
+    margin: 10px;
+  }
+
+  .dropdown-content a {
+    padding: 3px;
+  }
+
+  .btn_clear {
+    width: 100px;
+    margin: 10px;
+  }
+
+  .accordion {
+    padding: 15px;
+  }
+
+  .container {
+    margin: 40px 50px 20px 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .accordion {
+    padding: 13px;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-top: 0px;
+  }
+
+  .place_for_input {
+    height: 50px;
+    margin-bottom: 80px;
+  }
+
+  .dropdown-content a {
+    padding: 1px;
+  }
+
+  .place_for_input {
+    width: 100%;
+  }
+
+  .place_todo {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 625px) {
+  .accordion {
+    padding: 10px;
+  }
+
+  .div_btn {
+    margin-top: 10px;
+    height: 20px;
+  }
+
+  .btn_add {
+    width: 50px;
+    margin: 10px;
+  }
+
+  .btn_clear {
+    width: 50px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 530px) {
+  .input_add {
+    width: auto;
+    margin: 0;
+  }
+
+  .dropdown-content a {
+    padding: 0px;
+  }
+
+  .btn_add {
+    width: 40px;
+    margin: 0;
+  }
+
+  .dropdown-content a {
+    padding: 3px;
+  }
+
+  .btn_clear {
+    width: 45px;
+    margin: 0;
+  }
 }
