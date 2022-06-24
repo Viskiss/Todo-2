@@ -18,6 +18,13 @@ function save() {
 const COMPLETED_SELECTOR = "COMPLETED";
 const RESERVED_SELECTOR = "RESERVED";
 
+const PANEL = document.querySelectorAll(".panel_A .panel_C .panel_S");
+if (TODOS.lenght > 0) {
+  PANEL.style.display = "block";
+} else if (TODOS.lenght === 0) {
+  PANEL.style.display = "none";
+}
+
 const ACTIVE_TODOS = TODOS.filter((todo) => {
   if (!todo.completed && !todo.reserved) {
     return true;
@@ -101,7 +108,6 @@ DROPDOWN.addEventListener("click", (event) => {
 
     TODOS.push(todo);
     save();
-    // console.log(TODOS);
 
     INPUT_ADD.value = "";
     render();
@@ -196,5 +202,9 @@ function clearElement(element) {
     element.removeChild(element.firstChild);
   }
 }
+
+document.querySelector(".btn_clear").onclick = function () {
+  document.querySelector(".input_add").value = "";
+};
 
 render();
